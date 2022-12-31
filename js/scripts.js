@@ -67,14 +67,17 @@ var base = [
   {base: 2741, evo: 3742},
   {base: 2774, evo: 3275},
   {base: 2776, evo: 3350},
+  {base: 2797, evo: 3784},
   {base: 2837, evo: 3469},
   {base: 2960, evo: 3718},
   {base: 2964, evo: 3739},
   {base: 2980, evo: 3762},
   {base: 3071, evo: 3369},
   {base: 3175, evo: 3519},
+  {base: 3177, evo: 3786},
   {base: 3429, evo: 3430},
   {base: 3680, evo: 3721},
+  {base: 3680, evo: 3816},
 ];
 
 function updateStorage(key, value, save) {
