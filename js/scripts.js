@@ -223,8 +223,8 @@ function countLegends() {
   function countUnique(arg) {
     return new Set(arg.map (x => baseMap.hasOwnProperty(x)? baseMap[x].toString() : x)).size;
   }
-
-  $('#counter').html("<span class='cl'>Unique Legends - </span>" + countUnique(pairs) + "/" + (countUnique(unique) - (disabled.length - countUnique(disabledArray))));
+  //subtracting 1 from total to account for log luffy stuff?
+  $('#counter').html("<span class='cl'>Unique Legends - </span>" + countUnique(pairs) + "/" + (countUnique(unique) - (disabled.length - countUnique(disabledArray)) - 1));
   countLegends2();
 }
 
