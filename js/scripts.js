@@ -64,6 +64,7 @@ var base = [
   {base: 2441, evo: 3393},
   {base: 2465, evo: 3298},
   {base: 2475, evo: 3240},
+  {base: 2577, evo: 3828},
   {base: 2741, evo: 3742},
   {base: 2774, evo: 3275},
   {base: 2776, evo: 3350},
