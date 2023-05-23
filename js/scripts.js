@@ -501,9 +501,6 @@ jQuery(document).ready(function($) {
 
     const level_text = $obj[0].parentElement.getElementsByClassName('flair-level')[0]
 
-
-    const level_text = $obj[0].parentElement.getElementsByClassName('flair-level')[0]
-
     //rainbow toggle must be checked
     if(isChecked) {
       if($obj.hasClass("selected")) {
