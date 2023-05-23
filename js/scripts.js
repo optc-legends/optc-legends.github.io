@@ -457,6 +457,7 @@ function importSelection() {
 jQuery(document).ready(function($) {
   //adds base class to pre-defined elements
  
+ 
   for(var v in base) {
     var item = document.getElementById(base[v]['base']);
 
@@ -494,7 +495,11 @@ jQuery(document).ready(function($) {
     var isChecked2 = document.getElementById('hide-legends').checked;
     var isChecked3 = document.getElementById('switch2').checked;
     var isChecked4 = document.getElementById('check4').checked;
+    var isChecked4 = document.getElementById('check4').checked;
     const $obj = $(this);
+
+
+    const level_text = $obj[0].parentElement.getElementsByClassName('flair-level')[0]
 
 
     const level_text = $obj[0].parentElement.getElementsByClassName('flair-level')[0]
