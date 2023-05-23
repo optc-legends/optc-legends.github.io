@@ -282,15 +282,15 @@ function listHidden() {
   $("#switch2").prop("checked", false);
   $("#hide-legends").prop("checked", false);
 
-  var disabled = $(".disabled");
+  var disabled = $(".disabled")
   var box = $('.modal-content2');
 
   //creates new images for hidden legends
   for(var i = 0; i < disabled.length; i++) {
     var flair = document.createElement('img');
     flair.setAttribute('class', 'flair');
-    flair.setAttribute('name', disabled[i].id);
-    flair.setAttribute('src', 'images/icons/'+disabled[i].id+'.png');
+    flair.setAttribute('name', disabled[i].firstChild.id);
+    flair.setAttribute('src', 'images/icons/'+disabled[i].firstChild.id+'.png');
 
     box.append(flair);
   }
@@ -299,8 +299,7 @@ function listHidden() {
   $(".modal-content2 img").mousedown(function(e) {
     const $obj = $(this);
     var id = $obj[0].name;
-
-    $("#"+id).removeClass('disabled');
+    $("#"+id).parent().removeClass('disabled');
     //removes from modal display
     $obj.hide();
     //removes from local storage
@@ -457,6 +456,7 @@ function importSelection() {
 
 jQuery(document).ready(function($) {
   //adds base class to pre-defined elements
+ 
   for(var v in base) {
     var item = document.getElementById(base[v]['base']);
 
@@ -493,8 +493,11 @@ jQuery(document).ready(function($) {
     var isChecked = document.getElementById('switch').checked;
     var isChecked2 = document.getElementById('hide-legends').checked;
     var isChecked3 = document.getElementById('switch2').checked;
-
+    var isChecked4 = document.getElementById('check4').checked;
     const $obj = $(this);
+
+
+    const level_text = $obj[0].parentElement.getElementsByClassName('flair-level')[0]
 
     //rainbow toggle must be checked
     if(isChecked) {
@@ -521,7 +524,7 @@ jQuery(document).ready(function($) {
     }
     //hide legends toggle
     else if(isChecked2){
-      $obj.toggleClass("disabled");
+      $obj.parent().toggleClass("disabled");
       $obj.removeClass("rainbow");
       $obj.removeClass("srainbow");
       $obj.removeClass("selected");
@@ -556,6 +559,22 @@ jQuery(document).ready(function($) {
         updateStorage($obj.attr("id"), null, save);
       }
       countLegends();
+    }
+    else if(isChecked4){
+      if(level_text.textContent == '0') {
+        level_text.textContent = '1'
+      }else if(level_text.textContent == '1') {
+        level_text.textContent = '2'}
+      else if(level_text.textContent == '2') {
+        level_text.textContent = '3'}
+      else if(level_text.textContent == '3') {
+        level_text.textContent = '4'}
+      else if(level_text.textContent == '4') {
+        level_text.textContent = '5'}
+      else if(level_text.textContent == '5') {
+        level_text.textContent = '0'
+      }
+
     }
     //if not checked
     else {
@@ -600,7 +619,8 @@ jQuery(document).ready(function($) {
 
   //hides base forms of legends with super-evos
   $("#show-base").on("click", function() {
-    $('.base').toggleClass('hidden');
+    $('.base').parent().toggleClass('hidden');
+    console.log($('.base').parent())
     $('#show-base').css('display', 'none');
     $('#hide-base').css('display', 'inline-block');
     updateStorage("evohidden", null, false);
@@ -608,7 +628,7 @@ jQuery(document).ready(function($) {
 
   //shows base forms of legends with super-evos
   $("#hide-base").on("click", function() {
-    $('.base').toggleClass('hidden');
+    $('.base').parent().toggleClass('hidden');
     $('#hide-base').css('display', 'none');
     $('#show-base').css('display', 'inline-block');
     updateStorage("evohidden", 'true', true);

@@ -126,13 +126,18 @@ top:0;
 opacity:1;
 }
 
-.switch,.switch2,.switch3 {
+.switch,.switch2,.switch3,.switch4 {
 position:absolute;
 display:inline-block;
 top:-27px;
 left:0;
 width:30px;
 height:18px;
+}
+
+/*super rainbow toggle*/
+.switch4 {
+left: 435px;
 }
 
 /*super rainbow toggle*/
@@ -151,10 +156,18 @@ width:0;
 height:0;
 }
 
-.tooltip, .tooltip3 {
+.tooltip, .tooltip3, .tooltip4 {
 position:absolute;
 left:35px;
 top:-27px;
+color:#eee;
+font-size:13px;
+font-weight:500;
+text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+.flair-level{
 color:#eee;
 font-size:13px;
 font-weight:500;
@@ -173,6 +186,10 @@ text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
 .tooltip3 {
 left:180px;
+}
+
+.tooltip4 {
+left:470px;
 }
 
 .slider, .slider2 {

@@ -228,12 +228,19 @@ loadPage = function() {
 
 		//creates HTML for special flairs
 		for (var v in name) {
+				var flair_wrapper = document.createElement('div');
+				flair_wrapper.classList.add('flair-wrapper');
+				var flair_level = document.createElement('span');
+				flair_level.classList.add('flair-level');
+				flair_level.textContent = '0';
+				flair_wrapper.setAttribute('class', 'flair-wrapper');
 				var flair_special = document.createElement('img');
-				flair_special.setAttribute('class', 'flair');
+				flair_special.setAttribute('class', 'flair level-0');
 				flair_special.setAttribute('id', name[v]);
 				flair_special.setAttribute('src', 'images/icons/'+name[v]+'.png');
-
-				enter.appendChild(flair_special);
+				flair_wrapper.appendChild(flair_special);
+				flair_wrapper.appendChild(flair_level);
+				enter.appendChild(flair_wrapper);
 		}
 	}
 	loadSpecial();
