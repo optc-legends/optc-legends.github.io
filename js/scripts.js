@@ -457,6 +457,7 @@ function importSelection() {
 
 jQuery(document).ready(function($) {
   //adds base class to pre-defined elements
+ 
   for(var v in base) {
     var item = document.getElementById(base[v]['base']);
 
@@ -493,8 +494,11 @@ jQuery(document).ready(function($) {
     var isChecked = document.getElementById('switch').checked;
     var isChecked2 = document.getElementById('hide-legends').checked;
     var isChecked3 = document.getElementById('switch2').checked;
-
+    var isChecked4 = document.getElementById('check4').checked;
     const $obj = $(this);
+
+
+    const level_text = $obj[0].parentElement.getElementsByClassName('flair-level')[0]
 
     //rainbow toggle must be checked
     if(isChecked) {
@@ -521,6 +525,7 @@ jQuery(document).ready(function($) {
     }
     //hide legends toggle
     else if(isChecked2){
+      $obj.parent().toggleClass("disabled");
       $obj.toggleClass("disabled");
       $obj.removeClass("rainbow");
       $obj.removeClass("srainbow");
@@ -556,6 +561,22 @@ jQuery(document).ready(function($) {
         updateStorage($obj.attr("id"), null, save);
       }
       countLegends();
+    }
+    else if(isChecked4){
+      if(level_text.textContent == '0') {
+        level_text.textContent = '1'
+      }else if(level_text.textContent == '1') {
+        level_text.textContent = '2'}
+      else if(level_text.textContent == '2') {
+        level_text.textContent = '3'}
+      else if(level_text.textContent == '3') {
+        level_text.textContent = '4'}
+      else if(level_text.textContent == '4') {
+        level_text.textContent = '5'}
+      else if(level_text.textContent == '5') {
+        level_text.textContent = '0'
+      }
+
     }
     //if not checked
     else {

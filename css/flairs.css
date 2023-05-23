@@ -1,4 +1,4 @@
-.flair {
+.flair-wrapper, .flair {
 height:50px;
 width:50px;
 cursor:pointer;
@@ -10,19 +10,36 @@ background-size: contain;
 display: inline-block;
 }
 
+
+.selected + .flair-level {
+  display: block;
+}
+
+.flair-wrapper{
+  position: relative;
+}
+
+.flair-level{
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  z-index: 100;
+}
+
 #show-base {
   display: none;
 }
 
 @media only screen and (min-width: 1921px) {
-  .flair {
+  .flair-wrapper {
     height:70px;
     width:70px;
   }
 }
 
 @media only screen and (max-width: 760px) {
-  .flair {
+  .flair-wrapper {
     height:40px;
     width:40px;
   }
